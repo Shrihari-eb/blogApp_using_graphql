@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Card, Categories, Widget } from '../components/index'
-import { getPost } from '../services'
+import { getPosts } from '../services'
 import { FeaturedPosts } from '../sections'
 
 export default function Home({ posts }) {
@@ -30,7 +30,7 @@ export default function Home({ posts }) {
 
 //fetching data using nextjs
 export async function getStaticProps() {
-  const posts = (await getPost()) || []
+  const posts = (await getPosts()) || []
 
   return {
     props: { posts },
